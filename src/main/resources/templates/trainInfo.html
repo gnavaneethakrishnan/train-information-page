@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Train Details</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<h1>Get Station Details Based on Train Number</h1>
+
+<form action="#" th:action="@{/trainInfo}" method="get">
+    <input type="text" name="trainID" placeholder="Enter Train ID">
+    <input type="submit" value="Get Station Info">
+</form>
+
+<div th:if="${trainInfo != null}">
+    <p>Train ID: <span th:text="${trainInfo.trainID}"></span></p>
+    <p>Train Name: <span th:text="${trainInfo.trainName}"></span></p>
+    <p>Number of Coaches: <span th:text="${trainInfo.numberOfCoaches}"></span></p>
+    <p>From Station: <span th:text="${trainInfo.fromStation}"></span></p>
+    <p>To Station: <span th:text="${trainInfo.toStation}"></span></p>
+</div>
+</body>
+</html>
